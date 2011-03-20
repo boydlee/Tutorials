@@ -1,0 +1,20 @@
+<html> 
+<head> 
+ <title>RaphaelJS Chart</title> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+ <script src="raphael-min.lib" type="text/javascript" charset="utf-8"></script> 
+ <script src="g.raphael-min.js" type="text/javascript" charset="utf-8"></script> 
+ <script src="g.bar-min.js" type="text/javascript" charset="utf-8"></script> 
+</head> 
+<body> 
+  <div id="chartDiv" style="width:280px; height: 240px; margin: 0"></div>
+  <script>
+   //This registers an event listener that you can call 
+   //from within the app.js file
+   Ti.App.addEventListener('renderChart', function(chartData) {
+     var r = Raphael("chartDiv");               
+     r.g.barchart(0, 0, 270, 240, chartData.data, 0, {type: "sharp"}).hover(fin, fout); 
+   });
+  </script>
+</body> 
+</html>
